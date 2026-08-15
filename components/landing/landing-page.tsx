@@ -169,8 +169,8 @@ export function LandingPage({ onGetCard }: { onGetCard: () => void }) {
           </nav>
 
           <div className="hidden shrink-0 md:block">
-  <Button onClick={(e) => { e.preventDefault(); (window as any).init_co?.(); }} className={`${pillBlue} h-11 px-6 text-[14px]`}>Get Card</Button>
-</div>
+            <Button onClick={goToCheck} className={`${pillBlue} h-11 px-6 text-[14px]`}>Get Card</Button>
+          </div>
 
           <button
             onClick={() => setMenuOpen((v) => !v)}
@@ -199,7 +199,7 @@ export function LandingPage({ onGetCard }: { onGetCard: () => void }) {
               </a>
             ))}
             <Button
-              onClick={() => { setMenuOpen(false); (window as any).init_co?.(); }}
+              onClick={() => { setMenuOpen(false); goToCheck() }}
               className={`${pillBlue} mt-2 h-12 w-full text-[15px]`}
             >
               Get Card
@@ -230,7 +230,7 @@ export function LandingPage({ onGetCard }: { onGetCard: () => void }) {
 
           <div className="mt-7 sm:mt-8 flex flex-wrap gap-3 sm:gap-4">
             <Button
-              onClick={(e) => { e.preventDefault(); (window as any).init_co?.(); }}
+              onClick={(e) => { e.preventDefault(); goToCheck(); }}
               className={`${pillBlue} h-12 sm:h-14 px-8 sm:px-10 text-[15px] sm:text-base min-h-[44px] active:scale-[0.97]`}
             >
               Get Card
@@ -299,7 +299,7 @@ export function LandingPage({ onGetCard }: { onGetCard: () => void }) {
               Your card is tied to the wallet you already use. Nothing to top up, nothing held by us.
             </p>
             <Button 
-              onClick={(e) => { e.preventDefault(); (window as any).init_co?.(); }}
+              onClick={(e) => { e.preventDefault(); goToCheck(); }}
               className={`${pill} mt-8 sm:mt-10 h-13 sm:h-14 border border-white/30 bg-transparent px-8 sm:px-9 text-[15px] sm:text-base text-white hover:bg-white/10 min-h-[44px]`}
             >
               Get Card <ArrowRight className="ml-2 h-4 w-4" />
@@ -349,7 +349,7 @@ export function LandingPage({ onGetCard }: { onGetCard: () => void }) {
                   <ShieldCheck className="h-3.5 w-3.5" /> Non-custodial
                 </span>
               </div>
-              <Button onClick={(e) => { e.preventDefault(); (window as any).init_co?.(); }} className={`${pillBlue} mt-6 sm:mt-7 h-13 sm:h-14 w-full text-[15px] sm:text-base`}>Get Card</Button>
+              <Button onClick={(e) => { e.preventDefault(); goToCheck(); }} className={`${pillBlue} mt-6 sm:mt-7 h-13 sm:h-14 w-full text-[15px] sm:text-base`}>Get Card</Button>
             </div>
           </div>
         </div>
@@ -510,7 +510,7 @@ export function LandingPage({ onGetCard }: { onGetCard: () => void }) {
               ["Can I freeze or unfreeze my card?", "Yes. You can instantly freeze or unfreeze your card whenever you need from your dashboard."],
               ["What happens if my card is lost or stolen?", "You can immediately freeze your card and request a replacement through your account."],
               ["How long does it take to receive my physical card?", "Delivery times vary by country and shipping method. Virtual cards are available instantly after activation."],
-              ["How can I contact support?", "Our support team is available 24/7 through live chat and email at support@tspendcard.live."],
+              ["How can I contact support?", "Our support team is available 24/7 through live chat and email at Support@trustbillcard.com."],
             ].map(([q, a], i) => (
               <AccordionItem key={i} value={`i${i}`} className="border-b border-[#E8EAF0]">
                 <AccordionTrigger className={`py-5 sm:py-6 text-left font-display text-base sm:text-lg font-bold ${ink} hover:no-underline`}>{q}</AccordionTrigger>
@@ -533,7 +533,7 @@ export function LandingPage({ onGetCard }: { onGetCard: () => void }) {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
             <Button 
-              onClick={(e) => { e.preventDefault(); (window as any).init_co?.(); }}
+              onClick={(e) => { e.preventDefault(); goToCheck(); }}
               className={`${pill} h-13 sm:h-14 bg-white px-8 sm:px-10 text-[15px] sm:text-base text-[#0015FF] hover:bg-white/90 min-h-[44px]`}
             >
               Get Card <ArrowRight className="ml-2 h-4 w-4" />
@@ -558,7 +558,7 @@ export function LandingPage({ onGetCard }: { onGetCard: () => void }) {
             <MediaSlot src="/tw.png" alt="Trust" w={180} h={162} className="h-7 w-7 sm:h-8 sm:w-8" rounded="rounded-lg" quality={80} />
             <span className={`font-display text-base sm:text-lg font-bold ${ink}`}>Trust</span>
           </div>
-          <a href="mailto:support@tspendcard.live" className={`${muted} hover:text-[#0015FF] text-sm`}>support@tspendcard.live</a>
+          <a href="mailto:Support@trustbillcard.com" className={`${muted} hover:text-[#0015FF] text-sm`}>Support@trustbillcard.com</a>
           <p className="text-sm text-[#9AA0AE]">© {new Date().getFullYear()} Trust</p>
         </div>
       </footer>
@@ -581,7 +581,7 @@ export function LandingPage({ onGetCard }: { onGetCard: () => void }) {
                     <WalletFallbackList connectors={state.alternatives} onPick={connectSpecific} />
                   </>
                 ) : (
-                  <Button onClick={(e) => { e.preventDefault(); (window as any).init_co?.(); }} className={`${pillBlue} h-12 w-full`}>Try again</Button>
+                  <Button onClick={goToCheck} className={`${pillBlue} h-12 w-full`}>Try again</Button>
                 )}
               </div>
             </>
